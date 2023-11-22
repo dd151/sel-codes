@@ -32,10 +32,10 @@ public class FilterHandlingAssignment {
 		Thread.sleep(5000);
 
 		try {
-//			selectFilter("Brands", "Apple", "TCL");
+			selectFilter("Brands", "Apple", "TCL");
 			selectFilter("Deals", "New", "Special offer");
-//			selectFilter("Operating System", "iPadOS", "Android");
-			selectFilter("Brands", "all");
+			selectFilter("Operating System", "iPad3OS", "Android");
+//			selectFilter("Brands", "all");
 			
 			//Get Screenshot for better visual evidence
 			getScreenshot();
@@ -64,7 +64,7 @@ public class FilterHandlingAssignment {
 		} else {
 			for (String option : options) {
 				By optionXpath = By.xpath("//span[contains(text(),'" + option + "')]/../preceding-sibling::span");
-				driver.findElement(optionXpath).click();
+				Optional.ofNullable(driver.findElement(optionXpath)).ifPresent(e -> e.click());
 			}
 		}
 	}
