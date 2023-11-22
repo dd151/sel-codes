@@ -56,7 +56,7 @@ public class FilterHandlingAssignment {
 
 		
 		//If "all" is sent as an argument -> Iterate through all possible options and click
-		//Else iterate over the options passed in arguments -> Handled Valid and Invalid Options [Using Optional class]
+		//Else iterate over the options passed in arguments
 		if (options.length == 1 && options[0].equals("all")) {
 			List<WebElement> optionsElList = driver
 					.findElements(By.xpath("//input[@name='" + filterName + "']/parent::span"));
